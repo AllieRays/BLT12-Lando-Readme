@@ -8,21 +8,25 @@ This project is based on BLT 12.x with Lando local env, an open-source project t
 2. Ensure that your computer meets the minimum installation requirements (and then install the required applications). See the [System Requirements](https://docs.acquia.com/blt/install/).
 
 # If Starting From Stratch 
-1. Confirm BLT is added as a composer dependency 
+1. Downloand the latest version of Drupal
+```
+$ composer create-project drupal/recommended-project my_site_name_dir
+```
+2. Confirm BLT is added as a composer dependency 
 ```
 $ composer require acquia/blt:^12.0 --no-update
 ```
-2. Change `"minimum-stability": "stable",` to ` "minimum-stability": "dev",` in your composer.json file
+3. Change `"minimum-stability": "stable",` to ` "minimum-stability": "dev",` in your composer.json file
 
-3. Add the blt-lando plugin
+4. Add the blt-lando plugin
 ```
 $ composer require mikemadison13/blt-lando
 ```
-4. Run composer update 
+5. Run composer update 
 ```
 $ composer update
 ```
-5. Setup your container settings by modifying your .lando.yml file. 
+6. Setup your container settings by modifying your .lando.yml file. 
 ```
 $ blt recipes:vm:lando
 ```
